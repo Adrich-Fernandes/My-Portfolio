@@ -1,2 +1,1 @@
-# My-Portfolio
-“Beginner-friendly portfolio website created while learning web development.”
+# My-Portfolio...This repo is still in progress...
