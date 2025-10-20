@@ -3,6 +3,7 @@
     padding:0;
 }
 body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:white;
     /* backdrop-filter:blur(50px);to make the background blur.... */
     /* background-image:url(b.webp);  */
@@ -329,15 +330,16 @@ main .ski{
     justify-content: center;
     padding: 5px;
     overflow: hidden;
-    height:100%;
+    height:40vh;
     width:100%;
     /* background:rgba(208, 208, 53, 0.481); */
     border-radius: 8px;
     box-shadow: -10px 10px 10px rgba(53, 53, 53, 0.538);
 }
 .dimg img{
-    width:100%;
-    background-size: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .pimg a{
     font-weight: bold;
@@ -390,9 +392,21 @@ main .ski{
     
 }
 #tools{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:5vh;
     border-radius: 8px;
-    padding: 10px;
     height:fit-content;
+}
+#tool-p{
+    font-weight:bold;
+    border-radius: 10px;
+    text-align: center;
+    width:95%;
+    padding:15px;
+    background-color:rgba(43, 45, 66);
+    color:rgb(255, 255, 255);
 }
 @media(max-width: 800px){
     #editors{
