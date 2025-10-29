@@ -23,11 +23,11 @@
       <button class="menu">Menu</button>
     </nav>
     <div class="pos">
-      <a href="#intro">home</a>
-      <a href="#about-div">about</a>
-      <a href="#about-div">skills</a>
-      <a href="#projects">projects</a>
-      <a href="#d-1-2">contacts</a>
+      <a href="#intro" class="pon-nav">Home</a>
+      <a href="#forabout" class="pon-nav">About</a>
+      <a href="#forabout" class="pon-nav">Skills</a>
+      <a href="#projects" class="pon-nav">Projects</a>
+      <a href="#d-1-2" class="pon-nav">Contacts</a>
     </div>
     <header>
       <div id="intro">
@@ -42,8 +42,7 @@
         </div>
       </div>
     </header>
-
-    <main>
+    <main id="forabout">
       <!-- about section -->
       <div id="about-div">
         <div id="about">
@@ -51,8 +50,8 @@
           <span
             >"Hi, I'm Adrich Fernandes, a BCA student and an aspiring software
             developer. I enjoy solving problems through code and currently focus
-            on learning Java, Spring Boot, and web development. My goal is to
-            become a full-stack developer and build applications that make a
+            on learning Java, MongoDB, React.js and web development. My goal is
+            to become a full-stack developer and build applications that make a
             real impact."</span
           >
         </div>
@@ -62,26 +61,37 @@
       <section class="ski">
         <h2 id="ski">MY SKILLS</h2>
       </section>
-
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       <section>
         <div class="skills">
           <div class="simg java">
-            <i class="fab fa-java"></i><br /><span>java</span>
+            <div class="i-tag"><i class="fab fa-java"></i></div>
+            <div class="text-div"><h2 class="h2-text">Java</h2></div>
           </div>
+
           <div class="simg html">
-            <i class="fab fa-html5"></i><br /><span>HTML</span>
+            <div class="i-tag"><i class="fab fa-html5"></i></div>
+            <div class="text-div"><h2 class="h2-text">HTML5</h2></div>
           </div>
+
           <div class="simg css">
-            <i class="fab fa-css3-alt"></i><br /><span>CSS</span>
+            <div class="i-tag"><i class="fab fa-css3-alt"></i></div>
+            <div class="text-div"><h2 class="h2-text">CSS</h2></div>
           </div>
+
           <div class="simg js">
-            <i class="fab fa-js-square"></i><br /><span>java Script</span>
+            <div class="i-tag"><i class="fab fa-js-square"></i></div>
+            <div class="text-div"><h2 class="h2-text">JavaScript</h2></div>
           </div>
+
           <div class="simg python">
-            <i class="fab fa-python"></i><br /><span>Python</span>
+            <div class="i-tag"><i class="fab fa-python"></i></div>
+            <div class="text-div"><h2 class="h2-text">Python</h2></div>
           </div>
+
           <div class="simg react">
-            <i class="fa-brands fa-react"></i><br /><span>React</span>
+            <div class="i-tag"><i class="fa-brands fa-react"></i></div>
+            <div class="text-div"><h2 class="h2-text">React</h2></div>
           </div>
         </div>
       </section>
@@ -100,7 +110,10 @@
             <div class="disc">
               <h3>Movie Finder</h3>
               <p>
-                a structured document that provides a high-level overview...
+                Movie Finder is a simple web application built using HTML, CSS,
+                and JavaScript. It allows users to search for movies by name and
+                fetches details like poster, release date, and overview using a
+                movie API.
               </p>
             </div>
             <a href="https://github.com/Adrich-Fernandes/movie-finder">View</a>
@@ -113,7 +126,9 @@
             <div class="disc">
               <h3>Tic-Tac-Toe game</h3>
               <p>
-                a structured document that provides a high-level overview...
+                A simple Tic-Tac-Toe (X and O) game built using HTML, CSS, and
+                JavaScript. This project allows two players to play Tic-Tac-Toe
+                in the browser with a live score tracker and reset options.
               </p>
             </div>
             <a href="https://github.com/Adrich-Fernandes/tic-tac-toe-game"
@@ -128,7 +143,8 @@
             <div class="disc">
               <h3>To-Do List</h3>
               <p>
-                a structured document that provides a high-level overview...
+                A dynamic, dark-mode To-Do List web app built with HTML, CSS &
+                JavaScript, featuring task management and persistent storage.
               </p>
             </div>
             <a href="https://github.com/Adrich-Fernandes/to-do-list">View</a>
@@ -141,7 +157,11 @@
             <div class="disc">
               <h3>Weather App</h3>
               <p>
-                a structured document that provides a high-level overview...
+                A simple and elegant Weather App built using HTML, CSS, and
+                JavaScript, powered by the WeatherAPI.This app displays
+                real-time weather details such as temperature, humidity, wind
+                speed, and feels-like temperature, along with a dynamic
+                background that changes color based on the current temperature.
               </p>
             </div>
             <a href="https://github.com/Adrich-Fernandes/weather-app">View</a>
@@ -151,6 +171,7 @@
 
       <aside>
         <div id="tools">
+          <h2 id="tool-h2">Tools that i use</h2>
           <p id="tool-p">
             I build my projects using powerful development tools like Visual
             Studio Code and IntelliJ IDEA. VS Code helps me efficiently design
@@ -186,7 +207,7 @@
               <div class="info-div">
                 <div class="round"><img src="resourse/email.png" /></div>
                 <div class="rect">
-                  <a href="">E-mail: Adrich@outlook.com</a>
+                  <a href="">E-mail: adrichancyfernandes@gmail.com</a>
                 </div>
               </div>
               <div class="info-div">
@@ -194,7 +215,10 @@
                   <img src="resourse/linkedin.png" alt="" />
                 </div>
                 <div class="rect">
-                  <a href="">linkedin: Adrich fernandes</a>
+                  <a
+                    href="https://www.linkedin.com/in/adrich-fernandes-b14b2034b/"
+                    >linkedin: Adrich fernandes</a
+                  >
                 </div>
               </div>
             </div>
@@ -240,7 +264,8 @@
               ><i class="fa-brands fa-github"></i></a
           ></span>
           <span
-            ><a href=""><i class="fa-solid fa-envelope"></i></a
+            ><a href="mailto:adrichancyfernandes@gmail.com"
+              ><i class="fa-solid fa-envelope"></i></a
           ></span>
           <span
             ><a href="https://www.linkedin.com/in/adrich-fernandes-b14b2034b/"
@@ -251,9 +276,9 @@
               ><i class="fa-brands fa-instagram"></i></a
           ></span>
         </div>
-        <span style="font-size: 10px"
-          >© 2025 Adrich Fernandes. All Rights Reserved.</span
-        >
+        <span style="font-size: 10px">
+          © 2025 Adrich Fernandes. All Rights Reserved.
+        </span>
       </div>
     </footer>
 
