@@ -1,9 +1,6 @@
 const menu = document.querySelector('.menu');
 let pos = document.querySelector('.pos');
 let active = true;
-
-
-
 const navp = document.querySelectorAll('.pon-nav').forEach(items=>{
   items.addEventListener('click',()=>{
     menu.textContent = "menu"

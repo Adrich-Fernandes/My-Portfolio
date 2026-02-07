@@ -7,15 +7,20 @@ html{
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
     height: 100vh;
-    /* glowing gradient */
-    background: radial-gradient(circle, rgb(142, 183, 220), transparent 100%);
+
+    /* base dark background */
+    background-color: #111a2b;
+
+    /* same glowing animation color, layered */
+    background-image: radial-gradient(circle, rgb(95, 124, 149), transparent 100%);
     background-size: 200% 200%;
     animation: glowMove 10s ease-in-out infinite;
-    backdrop-filter: blur(50px); /* blur applied to background */
+
+    backdrop-filter: blur(50px);
 }
+
 @keyframes glowMove {
   0% {
     background-position: 0% 0%;
