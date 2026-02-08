@@ -1,287 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <nav>
-      <h1 id="name">Adrich Fernandes</h1>
-      <ul id="nav-ul">
-        <li><a href="#intro">Home</a></li>
-        <li><a href="#about-div">About</a></li>
-        <li><a href="">Skills</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#d-1-2">Contact</a></li>
-      </ul>
-      <button class="menu">Menu</button>
-    </nav>
-    <div class="pos">
-      <a href="#intro" class="pon-nav">Home</a>
-      <a href="#forabout" class="pon-nav">About</a>
-      <a href="#forabout" class="pon-nav">Skills</a>
-      <a href="#projects" class="pon-nav">Projects</a>
-      <a href="#d-1-2" class="pon-nav">Contacts</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+  <nav>
+    <h1 id="name">Adrich Fernandes</h1>
+    <ul id="nav-ul">
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#about-div">About</a></li>
+      <li><a href="">Skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#d-1-2">Contact</a></li>
+    </ul>
+    <button class="menu">Menu</button>
+  </nav>
+  <div class="pos">
+    <a href="#intro" class="pon-nav">Home</a>
+    <a href="#forabout" class="pon-nav">About</a>
+    <a href="#forabout" class="pon-nav">Skills</a>
+    <a href="#projects" class="pon-nav">Projects</a>
+    <a href="#d-1-2" class="pon-nav">Contacts</a>
+  </div>
+  <header>
+    <div id="intro">
+      <div id="intro-1">
+        <p>Hi, I'm</p>
+        <h1 id="name">Adrich Fernandes</h1>
+        <h2>Full Stack Developer | MERN Stack Developer</h2>
+      </div>
+
+      <div id="my-img">
+        <img src="resourse/my-photo.jpeg" alt="max" />
+      </div>
     </div>
-    <header>
-      <div id="intro">
-        <div id="intro-1">
-          <p style="text-align: center">Hi!! Im Adrich fernandes</p>
+  </header>
+  <main id="forabout">
+    <!-- about section -->
+    <div id="about-div">
+      <div id="about">
+        <h3>About Me</h3>
+        <span>"Hi, I'm Adrich Fernandes, a BCA student and an aspiring software
+          developer. I enjoy solving problems through code and currently focus
+          on learning Java, MongoDB, React.js and web development. My goal is
+          to become a full-stack developer and build applications that make a
+          real impact."</span>
+      </div>
+    </div>
+
+    <!-- skills -->
+    <section class="ski">
+      <h2 id="ski">MY SKILLS</h2>
+    </section>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <section>
+      <div class="skills">
+        <div class="simg java">
+          <div class="i-tag"><i class="fab fa-java"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">Java</h2>
+          </div>
         </div>
-        <div id="my-img">
-          <img
-            src="https://i.pinimg.com/736x/93/e3/3a/93e33ae0226681c26f9d7233a3b300cc.jpg"
-            alt="max"
-          />
+
+        <div class="simg html">
+          <div class="i-tag"><i class="fab fa-html5"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">HTML5</h2>
+          </div>
+        </div>
+
+        <div class="simg css">
+          <div class="i-tag"><i class="fab fa-css3-alt"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">CSS</h2>
+          </div>
+        </div>
+
+        <div class="simg js">
+          <div class="i-tag"><i class="fab fa-js-square"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">JavaScript</h2>
+          </div>
+        </div>
+
+        <div class="simg python">
+          <div class="i-tag"><i class="fab fa-python"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">Python</h2>
+          </div>
+        </div>
+
+        <div class="simg react">
+          <div class="i-tag"><i class="fa-brands fa-react"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">React</h2>
+          </div>
+        </div>
+        <div class="simg react">
+          <div class="i-tag"><i class="fa-brands fa-node"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">node js</h2>
+          </div>
+        </div>
+        <div class="simg react">
+          <div class="i-tag"><i class="fa-solid fa-server"></i></div>
+          <div class="text-div">
+            <h2 class="h2-text">express js</h2>
+          </div>
         </div>
       </div>
-    </header>
-    <main id="forabout">
-      <!-- about section -->
-      <div id="about-div">
-        <div id="about">
-          <h3>About Me</h3>
-          <span
-            >"Hi, I'm Adrich Fernandes, a BCA student and an aspiring software
-            developer. I enjoy solving problems through code and currently focus
-            on learning Java, MongoDB, React.js and web development. My goal is
-            to become a full-stack developer and build applications that make a
-            real impact."</span
-          >
+    </section>
+
+    <!-- projects -->
+    <section class="ski" id="projects">
+      <h2>Mini Projects</h2>
+    </section>
+
+    <section class="projects">
+      <div class="proj">
+        <div class="pimg">
+          <div class="dimg">
+            <img src="resourse/movie.jpeg" alt="" />
+          </div>
+          <div class="disc">
+            <h3>Movie Finder</h3>
+            <p>
+              Movie Finder is a simple web application built using HTML, CSS,
+              and JavaScript. It allows users to search for movies by name and
+              fetches details like poster, release date, and overview using a
+              movie API.
+            </p>
+          </div>
+          <a href="https://github.com/Adrich-Fernandes/movie-finder">View</a>
+        </div>
+
+        <div class="pimg">
+          <div class="dimg">
+            <img src="resourse/tic.jpeg" alt="" />
+          </div>
+          <div class="disc">
+            <h3>Tic-Tac-Toe game</h3>
+            <p>
+              A simple Tic-Tac-Toe (X and O) game built using HTML, CSS, and
+              JavaScript. This project allows two players to play Tic-Tac-Toe
+              in the browser with a live score tracker and reset options.
+            </p>
+          </div>
+          <a href="https://github.com/Adrich-Fernandes/tic-tac-toe-game">View</a>
+        </div>
+
+        <!-- <div class="pimg">
+          <div class="dimg">
+            <img src="resourse/todo.jpg" alt="" />
+          </div>
+          <div class="disc">
+            <h3>To-Do List</h3>
+            <p>
+              A dynamic, dark-mode To-Do List web app built with HTML, CSS &
+              JavaScript, featuring task management and persistent storage.
+            </p>
+          </div>
+          <a href="https://github.com/Adrich-Fernandes/to-do-list">View</a>
+        </div> -->
+
+        <div class="pimg">
+          <div class="dimg">
+            <img src="resourse/weather.jpg" alt="" />
+          </div>
+          <div class="disc">
+            <h3>Weather App</h3>
+            <p>
+              A clean Weather App built with HTML, CSS, and JavaScript using WeatherAPI.
+              It shows real-time temperature, humidity, wind speed, feels-like temperature,
+              and features a dynamic background that changes based on temperature.
+            </p>
+          </div>
+          <a href="https://github.com/Adrich-Fernandes/weather-app">View</a>
+        </div>
+
+        <div class="pimg">
+          <div class="dimg">
+            <img src="resourse/product.png" alt="" />
+          </div>
+          <div class="disc">
+            <h3>product Dashboard</h3>
+            <p>
+              Developed a Product Management Dashboard using the MERN
+              stack that enables adding and viewing product details via a form and a data table. Build REST
+              APIs with Node.js and Express.js, integrated MongoDB for data persistence, and designed a
+              responsive React-based user interface
+            </p>
+          </div>
+          <a href="https://github.com/Adrich-Fernandes/product-List">View</a>
         </div>
       </div>
+    </section>
 
-      <!-- skills -->
-      <section class="ski">
-        <h2 id="ski">MY SKILLS</h2>
-      </section>
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-      <section>
-        <div class="skills">
-          <div class="simg java">
-            <div class="i-tag"><i class="fab fa-java"></i></div>
-            <div class="text-div"><h2 class="h2-text">Java</h2></div>
+    <aside>
+      <div id="tools">
+        <h2 id="tool-h2">Tools that i use</h2>
+        <p id="tool-p">
+          I build my projects using powerful development tools like Visual
+          Studio Code and IntelliJ IDEA. VS Code helps me efficiently design
+          and develop front-end applications using HTML, CSS, and JavaScript,
+          while IntelliJ IDEA provides a robust environment for writing and
+          debugging Java applications. These tools together allow me to work
+          seamlessly across different technologies, ensuring clean, efficient,
+          and well-structured code in every project.
+        </p>
+        <div id="editors">
+          <div class="editor">
+            <img src="resourse/vscode.png" alt="vscode" />
           </div>
-
-          <div class="simg html">
-            <div class="i-tag"><i class="fab fa-html5"></i></div>
-            <div class="text-div"><h2 class="h2-text">HTML5</h2></div>
-          </div>
-
-          <div class="simg css">
-            <div class="i-tag"><i class="fab fa-css3-alt"></i></div>
-            <div class="text-div"><h2 class="h2-text">CSS</h2></div>
-          </div>
-
-          <div class="simg js">
-            <div class="i-tag"><i class="fab fa-js-square"></i></div>
-            <div class="text-div"><h2 class="h2-text">JavaScript</h2></div>
-          </div>
-
-          <div class="simg python">
-            <div class="i-tag"><i class="fab fa-python"></i></div>
-            <div class="text-div"><h2 class="h2-text">Python</h2></div>
-          </div>
-
-          <div class="simg react">
-            <div class="i-tag"><i class="fa-brands fa-react"></i></div>
-            <div class="text-div"><h2 class="h2-text">React</h2></div>
+          <div class="editor">
+            <img src="resourse/antigravity.jpg" alt="antigravity" />
           </div>
         </div>
-      </section>
-
-      <!-- projects -->
-      <section class="ski" id="projects">
-        <h2>Mini Projects</h2>
-      </section>
-
-      <section class="projects">
-        <div class="proj">
-          <div class="pimg">
-            <div class="dimg">
-              <img src="resourse/movie.jpg" alt="" />
-            </div>
-            <div class="disc">
-              <h3>Movie Finder</h3>
-              <p>
-                Movie Finder is a simple web application built using HTML, CSS,
-                and JavaScript. It allows users to search for movies by name and
-                fetches details like poster, release date, and overview using a
-                movie API.
-              </p>
-            </div>
-            <a href="https://github.com/Adrich-Fernandes/movie-finder">View</a>
-          </div>
-
-          <div class="pimg">
-            <div class="dimg">
-              <img src="resourse/tic.jpg" alt="" />
-            </div>
-            <div class="disc">
-              <h3>Tic-Tac-Toe game</h3>
-              <p>
-                A simple Tic-Tac-Toe (X and O) game built using HTML, CSS, and
-                JavaScript. This project allows two players to play Tic-Tac-Toe
-                in the browser with a live score tracker and reset options.
-              </p>
-            </div>
-            <a href="https://github.com/Adrich-Fernandes/tic-tac-toe-game"
-              >View</a
-            >
-          </div>
-
-          <div class="pimg">
-            <div class="dimg">
-              <img src="resourse/todo.jpg" alt="" />
-            </div>
-            <div class="disc">
-              <h3>To-Do List</h3>
-              <p>
-                A dynamic, dark-mode To-Do List web app built with HTML, CSS &
-                JavaScript, featuring task management and persistent storage.
-              </p>
-            </div>
-            <a href="https://github.com/Adrich-Fernandes/to-do-list">View</a>
-          </div>
-
-          <div class="pimg">
-            <div class="dimg">
-              <img src="resourse/weather.jpg" alt="" />
-            </div>
-            <div class="disc">
-              <h3>Weather App</h3>
-              <p>
-                A simple and elegant Weather App built using HTML, CSS, and
-                JavaScript, powered by the WeatherAPI.This app displays
-                real-time weather details such as temperature, humidity, wind
-                speed, and feels-like temperature, along with a dynamic
-                background that changes color based on the current temperature.
-              </p>
-            </div>
-            <a href="https://github.com/Adrich-Fernandes/weather-app">View</a>
-          </div>
-        </div>
-      </section>
-
-      <aside>
-        <div id="tools">
-          <h2 id="tool-h2">Tools that i use</h2>
-          <p id="tool-p">
-            I build my projects using powerful development tools like Visual
-            Studio Code and IntelliJ IDEA. VS Code helps me efficiently design
-            and develop front-end applications using HTML, CSS, and JavaScript,
-            while IntelliJ IDEA provides a robust environment for writing and
-            debugging Java applications. These tools together allow me to work
-            seamlessly across different technologies, ensuring clean, efficient,
-            and well-structured code in every project.
-          </p>
-          <div id="editors">
-            <div class="editor">
-              <img src="resourse/vscode.png" alt="vscode" />
-            </div>
-            <div class="editor">
-              <img src="resourse/itj.png" alt="intellij" />
-            </div>
-          </div>
-        </div>
-      </aside>
-      <!-- get in touch -->
-      <section class="help">
-        <h2>Get In Touch</h2>
-        <p>some additional information here</p>
-
-        <div id="d-1-2">
-          <div id="d-1">
-            <p style="font-size: 20px"><b>Contact Details</b></p>
-            <div id="d-1-1">
-              <div class="info-div">
-                <div class="round"><img src="resourse/phone.png" /></div>
-                <div class="rect"><a href="">phone: +91 xxxxxxxxxx</a></div>
-              </div>
-              <div class="info-div">
-                <div class="round"><img src="resourse/email.png" /></div>
-                <div class="rect">
-                  <a href="">E-mail: adrichancyfernandes@gmail.com</a>
-                </div>
-              </div>
-              <div class="info-div">
-                <div class="round">
-                  <img src="resourse/linkedin.png" alt="" />
-                </div>
-                <div class="rect">
-                  <a
-                    href="https://www.linkedin.com/in/adrich-fernandes-b14b2034b/"
-                    >linkedin: Adrich fernandes</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="d-2">
-            <form id="contact-form">
-              <div class="d-f">
-                <input
-                  class="d-f-input"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div class="d-f">
-                <input
-                  class="d-f-input"
-                  type="email"
-                  placeholder="Your e-mail"
-                  required
-                />
-              </div>
-              <div id="d-f-m">
-                <textarea
-                  placeholder="Send a message"
-                  id="d-f-m-input"
-                  rows="4"
-                ></textarea>
-              </div>
-              <button id="submit" type="submit">Send ⩥</button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="info">
-        <div id="info-icon">
-          <span
-            ><a href="https://github.com/Adrich-Fernandes"
-              ><i class="fa-brands fa-github"></i></a
-          ></span>
-          <span
-            ><a href="mailto:adrichancyfernandes@gmail.com"
-              ><i class="fa-solid fa-envelope"></i></a
-          ></span>
-          <span
-            ><a href="https://www.linkedin.com/in/adrich-fernandes-b14b2034b/"
-              ><i class="fa-brands fa-linkedin"></i></a
-          ></span>
-          <span
-            ><a href="https://www.instagram.com/adrich__fernandes/?__pwa=1"
-              ><i class="fa-brands fa-instagram"></i></a
-          ></span>
-        </div>
-        <span style="font-size: 10px">
-          © 2025 Adrich Fernandes. All Rights Reserved.
-        </span>
       </div>
-    </footer>
+    </aside>
+    <!-- get in touch -->
+    <section class="help">
+      <h2>Get In Touch</h2>
+      <p>some additional information here</p>
 
-    <script src="script.js"></script>
-  </body>
+      <div id="d-1-2">
+        <div id="d-1">
+          <p style="font-size: 20px"><b>Contact Details</b></p>
+          <div id="d-1-1">
+            <div class="info-div">
+              <div class="round"><img src="resourse/phone.png" /></div>
+              <div class="rect"><a href="">phone: +91 xxxxxxxxxx</a></div>
+            </div>
+            <div class="info-div">
+              <div class="round"><img src="resourse/email.jpg" /></div>
+              <div class="rect">
+                <a href="">E-mail: adrichancyfernandes@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-div">
+              <div class="round">
+                <img src="resourse/LinkedIn_logo.png" alt="" />
+              </div>
+              <div class="rect">
+                <a href="https://www.linkedin.com/in/adrich-fernandes-b14b2034b/">linkedin: Adrich fernandes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="d-2">
+          <form id="contact-form">
+            <div class="d-f">
+              <input class="d-f-input" type="text" placeholder="Your name" required />
+            </div>
+            <div class="d-f">
+              <input class="d-f-input" type="email" placeholder="Your e-mail" required />
+            </div>
+            <div id="d-f-m">
+              <textarea placeholder="Send a message" id="d-f-m-input" rows="4"></textarea>
+            </div>
+            <button id="submit" type="submit">Send ⩥</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="info">
+      <div id="info-icon">
+        <span><a href="https://github.com/Adrich-Fernandes"><i class="fa-brands fa-github"></i></a></span>
+        <span><a href="mailto:adrichancyfernandes@gmail.com"><i class="fa-solid fa-envelope"></i></a></span>
+        <span><a href="https://www.linkedin.com/in/adrich-fernandes-b14b2034b/"><i
+              class="fa-brands fa-linkedin"></i></a></span>
+        <span><a href="https://www.instagram.com/adrich__fernandes/?__pwa=1"><i
+              class="fa-brands fa-instagram"></i></a></span>
+      </div>
+      <span style="font-size: 10px">
+        © 2025 Adrich Fernandes. All Rights Reserved.
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

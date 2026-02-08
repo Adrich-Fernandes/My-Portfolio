@@ -1,0 +1,15 @@
+TO-DO LIST
+
+> add a new project
+
+> add new skills
+
+> add backend to the form to get the data
+
+>reset the images
+
+>set the right colors(with gemini)
+
+>add my image (face use AI to make it look professional)
+
+>
