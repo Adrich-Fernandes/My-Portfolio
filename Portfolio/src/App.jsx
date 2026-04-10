@@ -2,6 +2,54 @@ import { useState } from "react";
 
 export default function GlassArctic() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [status, setStatus] = useState("idle"); 
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const contactEmail = "adrichfernandes20@gmail.com";
+  // Get your free Access Key at https://web3forms.com/
+  // PASTE YOUR KEY HERE:
+  const accessKey = "f7974ff8-06d0-472a-9ab1-5e3158f00fee"; 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey, 
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -195,12 +243,15 @@ export default function GlassArctic() {
             >
               Get In Touch
             </button>
-            <button
-              className="px-6 py-3 rounded-xl font-semibold text-[#0c1a2e] transition duration-300"
+            <a
+              href="/GreenNest.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-xl font-semibold text-[#0c1a2e] transition duration-300 text-center"
               style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 20px rgba(56,189,248,0.4)" }}
             >
               View My Resume
-            </button>
+            </a>
           </div>
         </div>
 
@@ -483,7 +534,7 @@ export default function GlassArctic() {
             </p>
 
             {[
-              { icon: "✉️", label: "Email", value: "your.email@example.com" },
+              { icon: "✉️", label: "Email", value: contactEmail },
               { icon: "📍", label: "Location", value: "Your City, Country" },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 mb-8">
@@ -502,7 +553,8 @@ export default function GlassArctic() {
           </div>
 
           {/* Right Form */}
-          <div
+          <form
+            onSubmit={handleSubmit}
             className="p-10 rounded-3xl transition duration-500 hover:shadow-[0_0_50px_rgba(125,211,252,0.15)]"
             style={{
               background: "rgba(255,255,255,0.04)",
@@ -512,13 +564,17 @@ export default function GlassArctic() {
           >
             <div className="space-y-6">
               {[
-                { label: "Name", type: "text", placeholder: "John Doe" },
-                { label: "Email", type: "email", placeholder: "john@example.com" },
+                { label: "Name", type: "text", name: "name", placeholder: "John Doe" },
+                { label: "Email", type: "email", name: "email", placeholder: "john@example.com" },
               ].map((field, i) => (
                 <div key={i}>
                   <label className="block mb-2 text-[#bae6fd] font-medium text-sm">{field.label}</label>
                   <input
                     type={field.type}
+                    name={field.name}
+                    value={formData[field.name]}
+                    onChange={handleChange}
+                    required
                     placeholder={field.placeholder}
                     className="w-full rounded-xl px-4 py-3 text-[#e0f2fe] placeholder-[#4a7a9b] outline-none transition duration-300"
                     style={{
@@ -534,6 +590,10 @@ export default function GlassArctic() {
               <div>
                 <label className="block mb-2 text-[#bae6fd] font-medium text-sm">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   rows="6"
                   placeholder="Tell me about your project..."
                   className="w-full rounded-xl px-4 py-3 text-[#e0f2fe] placeholder-[#4a7a9b] outline-none transition duration-300 resize-none"
@@ -547,18 +607,42 @@ export default function GlassArctic() {
               </div>
 
               <button
-                className="w-full py-4 rounded-xl font-semibold text-[#0c1a2e] transition duration-300"
+                type="submit"
+                disabled={status === "submitting"}
+                className="w-full py-4 rounded-xl font-semibold text-[#0c1a2e] transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
-                  background: "linear-gradient(135deg, #38bdf8, #7dd3fc)",
-                  boxShadow: "0 0 25px rgba(56,189,248,0.4)",
+                  background: status === "success" 
+                    ? "linear-gradient(135deg, #22c55e, #4ade80)" 
+                    : status === "error"
+                      ? "linear-gradient(135deg, #ef4444, #f87171)"
+                      : "linear-gradient(135deg, #38bdf8, #7dd3fc)",
+                  boxShadow: status === "success"
+                    ? "0 0 25px rgba(34,197,94,0.4)"
+                    : status === "error"
+                      ? "0 0 25px rgba(239,68,68,0.4)"
+                      : "0 0 25px rgba(56,189,248,0.4)",
                 }}
-                onMouseEnter={e => e.target.style.boxShadow = "0 0 40px rgba(56,189,248,0.6)"}
-                onMouseLeave={e => e.target.style.boxShadow = "0 0 25px rgba(56,189,248,0.4)"}
+                onMouseEnter={e => { if (status === "idle") e.target.style.boxShadow = "0 0 40px rgba(56,189,248,0.6)"; }}
+                onMouseLeave={e => { if (status === "idle") e.target.style.boxShadow = "0 0 25px rgba(56,189,248,0.4)"; }}
               >
-                Send Message ❄
+                {status === "submitting" ? "Sending... ❄" : 
+                 status === "success" ? "Message Sent! ✨" : 
+                 status === "error" ? "Error Sending! ❌" : 
+                 "Send Message ❄"}
               </button>
+
+              {status === "success" && (
+                <p className="text-center text-[#4ade80] text-sm font-medium animate-pulse">
+                  Thank you! I'll get back to you soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-center text-[#f87171] text-sm font-medium">
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </div>
-          </div>
+          </form>
         </div>
       </div>
 
