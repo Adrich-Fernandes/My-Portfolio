@@ -14,7 +14,7 @@ export default function GlassArctic() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const contactEmail = "adrichfernandes20@gmail.com";
+  const contactEmail = "adrichancyfernandes@gmail.com";
   const accessKey = "f7974ff8-06d0-472a-9ab1-5e3158f00fee";
 
   const handleSubmit = async (e) => {
@@ -165,13 +165,20 @@ export default function GlassArctic() {
           </p>
           <div className="flex gap-4 justify-center md:justify-start">
             {[
-              "https://www.freeiconspng.com/uploads/github-icon-9.png",
-              "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.png",
-              "https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/email-envelope-line-white-icon.png",
-            ].map((src, i) => (
-              <div key={i} className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition duration-300 hover:scale-110" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(125,211,252,0.3)", boxShadow: "0 0 10px rgba(56,189,248,0.1)" }}>
-                <img src={src} alt="icon" className="w-5 h-5 object-contain" />
-              </div>
+              { href: "https://github.com/Adrich-Fernandes", src: "https://www.freeiconspng.com/uploads/github-icon-9.png" },
+              { href: "https://www.linkedin.com/in/adrich-fernandes-b14b2034b/", src: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-white-icon.png" },
+              { href: "mailto:adrichancyfernandes@gmail.com", src: "https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/email-envelope-line-white-icon.png" },
+            ].map((social, i) => (
+              <a 
+                key={i} 
+                href={social.href} 
+                target={social.href.startsWith("mailto:") ? undefined : "_blank"} 
+                rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"} 
+                className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition duration-300 hover:scale-110" 
+                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(125,211,252,0.3)", boxShadow: "0 0 10px rgba(56,189,248,0.1)" }}
+              >
+                <img src={social.src} alt="icon" className="w-5 h-5 object-contain" />
+              </a>
             ))}
           </div>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
@@ -230,9 +237,30 @@ export default function GlassArctic() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {[
-            { img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", title: "Project One", desc: "A full stack web application built with modern technologies focusing on performance and clean architecture." },
-            { img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c", title: "Project Two", desc: "A responsive UI application designed with user experience and accessibility in mind." },
-            { img: "https://images.unsplash.com/photo-1518770660439-4636190af475", title: "Project Three", desc: "Backend-focused system with optimized APIs and scalable architecture." },
+            { 
+              img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", 
+              title: "GreenNest", 
+              desc: "A full-stack web application designed for users to shop for plants and book professional gardening appointments.",
+              link: "https://github.com/Adrich-Fernandes/GreenNest"
+            },
+            { 
+              img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c", 
+              title: "RentEase", 
+              desc: "A comprehensive furniture and appliance rental platform featuring user, admin, and support functionalities.",
+              link: "https://github.com/Adrich-Fernandes/RENT_EASY"
+            },
+            { 
+              img: "https://images.unsplash.com/photo-1518770660439-4636190af475", 
+              title: "Product List", 
+              desc: "A responsive product listing application demonstrating state management and modern functional design.",
+              link: "https://github.com/Adrich-Fernandes/product-List"
+            },
+            { 
+              img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa", 
+              title: "AI-Extension", 
+              desc: "An intelligent browser extension incorporating artificial intelligence capabilities to boost productivity.",
+              link: "https://github.com/Adrich-Fernandes/AI-Extension"
+            },
           ].map((project, i) => (
             <div key={i} className={`${glassCard} hover:bg-white/10 hover:border-[#7dd3fc]/40 hover:shadow-[0_0_40px_rgba(125,211,252,0.2)] transition duration-500 hover:scale-105 overflow-hidden flex flex-col`}>
               <div className="relative overflow-hidden">
@@ -242,9 +270,9 @@ export default function GlassArctic() {
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-3" style={{ color: "#7dd3fc" }}>{project.title}</h3>
                 <p className="text-[#93c5fd] leading-relaxed mb-6 flex-grow">{project.desc}</p>
-                <button className="w-fit px-5 py-2 rounded-xl text-sm font-semibold text-[#0c1a2e] transition duration-300" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 15px rgba(56,189,248,0.3)" }}>
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-fit px-5 py-2 rounded-xl text-sm font-semibold text-[#0c1a2e] transition duration-300 inline-block text-center" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 15px rgba(56,189,248,0.3)" }}>
                   GitHub ↗
-                </button>
+                </a>
               </div>
             </div>
           ))}
@@ -254,7 +282,7 @@ export default function GlassArctic() {
       {/* ── SKILLS & TOOLS SECTION ── */}
       <div id="skills" className="relative z-10 w-full py-28 px-6 md:px-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold" style={{ color: "#FFD700", textShadow: "0 0 20px rgba(255,215,0,0.4)" }}>
+          <h2 className="text-4xl md:text-5xl font-extrabold" style={{ color: "#7dd3fc", textShadow: "0 0 20px rgba(125,211,252,0.4)" }}>
             Skills & Tools
           </h2>
           <p className="text-[#93c5fd] mt-3 text-sm max-w-xl mx-auto">
