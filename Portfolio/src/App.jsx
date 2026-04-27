@@ -54,17 +54,20 @@ export default function GlassArctic() {
   const glassCardHover =
     `${glassCard} hover:bg-white/10 hover:border-[#7dd3fc]/40 hover:shadow-[0_0_40px_rgba(125,211,252,0.2)] transition duration-500 hover:scale-105`;
 
-  const skills = [
+  const frontendSkills = [
     { name: "HTML", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
     { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-    { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  ];
+
+  const backendSkills = [
     { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
     { name: "Express", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-    { name: "SQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "SQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
   ];
 
   const tools = [
@@ -312,28 +315,59 @@ export default function GlassArctic() {
 
         {/* Skills Grid */}
         {activeTab === "skills" && (
-          <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {skills.map((skill, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center gap-3 p-5 rounded-2xl transition duration-300"
-                style={{ background: "rgba(10,30,60,0.8)", border: "1px solid rgba(125,211,252,0.15)", cursor: "default" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "rgba(56,189,248,0.08)"; e.currentTarget.style.borderColor = "rgba(125,211,252,0.4)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "rgba(10,30,60,0.8)"; e.currentTarget.style.borderColor = "rgba(125,211,252,0.15)"; e.currentTarget.style.transform = "translateY(0)"; }}
-              >
-                <img
-                  src={skill.img}
-                  alt={skill.name}
-                  style={{
-                    width: 48, height: 48, objectFit: "contain",
-                    filter: skill.name === "Express" ? "invert(0.6)" : "none",
-                  }}
-                />
-                <span style={{ color: "#93c5fd", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.05em", textAlign: "center" }}>
-                  {skill.name}
-                </span>
+          <div className="max-w-4xl mx-auto flex flex-col gap-10">
+            <div>
+              <h3 className="text-xl font-bold text-center mb-6" style={{ color: "#7dd3fc" }}>Frontend</h3>
+              <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {frontendSkills.map((skill, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center gap-3 p-5 rounded-2xl transition duration-300"
+                    style={{ background: "rgba(10,30,60,0.8)", border: "1px solid rgba(125,211,252,0.15)", cursor: "default" }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(56,189,248,0.08)"; e.currentTarget.style.borderColor = "rgba(125,211,252,0.4)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = "rgba(10,30,60,0.8)"; e.currentTarget.style.borderColor = "rgba(125,211,252,0.15)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                  >
+                    <img
+                      src={skill.img}
+                      alt={skill.name}
+                      style={{
+                        width: 48, height: 48, objectFit: "contain",
+                      }}
+                    />
+                    <span style={{ color: "#93c5fd", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.05em", textAlign: "center" }}>
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-center mb-6" style={{ color: "#7dd3fc" }}>Backend</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                {backendSkills.map((skill, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center gap-3 p-5 rounded-2xl transition duration-300"
+                    style={{ background: "rgba(10,30,60,0.8)", border: "1px solid rgba(125,211,252,0.15)", cursor: "default" }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "rgba(56,189,248,0.08)"; e.currentTarget.style.borderColor = "rgba(125,211,252,0.4)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = "rgba(10,30,60,0.8)"; e.currentTarget.style.borderColor = "rgba(125,211,252,0.15)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                  >
+                    <img
+                      src={skill.img}
+                      alt={skill.name}
+                      style={{
+                        width: 48, height: 48, objectFit: "contain",
+                        filter: skill.name === "Express" ? "invert(0.6)" : "none",
+                      }}
+                    />
+                    <span style={{ color: "#93c5fd", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.05em", textAlign: "center" }}>
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
