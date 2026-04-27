@@ -426,8 +426,8 @@ export default function GlassArctic() {
             </div>
             <div className="flex flex-col gap-6 w-full md:w-auto">
               {[
-                { title: "Responsibilities", desc: "Built full-stack applications, implemented REST APIs, and worked with MongoDB." },
-                { title: "Achievements", desc: "Improved application performance and deployed projects successfully." },
+                { title: "GreenNest", desc: "A full-stack application for shopping plants and booking gardening appointments.", link: "https://github.com/Adrich-Fernandes/GreenNest" },
+                { title: "RentEase", desc: "A comprehensive furniture and appliance rental platform with user and admin functionality.", link: "https://github.com/Adrich-Fernandes/RENT_EASY" },
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-2xl flex flex-col justify-between gap-4" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(125,211,252,0.1)" }}>
                   <div>
@@ -435,7 +435,7 @@ export default function GlassArctic() {
                     <p className="text-[#93c5fd] text-sm">{item.desc}</p>
                   </div>
                   <div className="flex justify-end">
-                    <a href="#" className="px-4 py-2 text-sm font-semibold rounded-lg text-[#0c1a2e] transition duration-300" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 12px rgba(56,189,248,0.3)" }}>
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm font-semibold rounded-lg text-[#0c1a2e] transition duration-300" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 12px rgba(56,189,248,0.3)" }}>
                       View Project ↗
                     </a>
                   </div>
