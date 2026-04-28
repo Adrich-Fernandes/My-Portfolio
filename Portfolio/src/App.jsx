@@ -191,7 +191,7 @@ export default function GlassArctic() {
             <button onClick={() => handleScroll("contact")} className="px-6 py-3 rounded-xl font-semibold transition duration-300" style={{ border: "1px solid rgba(56,189,248,0.5)", color: "#38bdf8", background: "rgba(56,189,248,0.05)" }} onMouseEnter={e => { e.currentTarget.style.background = "rgba(56,189,248,0.15)"; e.currentTarget.style.boxShadow = "0 0 20px rgba(56,189,248,0.3)"; }} onMouseLeave={e => { e.currentTarget.style.background = "rgba(56,189,248,0.05)"; e.currentTarget.style.boxShadow = "none"; }}>
               Get In Touch
             </button>
-            <a href="/GreenNest.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-xl font-semibold text-[#0c1a2e] transition duration-300 text-center" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 20px rgba(56,189,248,0.4)" }}>
+            <a href="/Adrich Fernandes.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-xl font-semibold text-[#0c1a2e] transition duration-300 text-center" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 20px rgba(56,189,248,0.4)" }}>
               View My Resume
             </a>
           </div>
@@ -243,13 +243,13 @@ export default function GlassArctic() {
             { 
               img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", 
               title: "GreenNest", 
-              desc: "A full-stack web application designed for users to shop for plants and book professional gardening appointments.",
+              desc: "A full-stack gardening platform featuring a 3-tier architecture, automated stock management, and service booking engine.",
               link: "https://github.com/Adrich-Fernandes/GreenNest"
             },
             { 
               img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c", 
               title: "RentEase", 
-              desc: "A comprehensive furniture and appliance rental platform featuring user, admin, and support functionalities.",
+              desc: "A MERN-stack rental platform with Clerk authentication, real-time order tracking, and role-based management.",
               link: "https://github.com/Adrich-Fernandes/RENT_EASY"
             },
             { 
@@ -426,8 +426,8 @@ export default function GlassArctic() {
             </div>
             <div className="flex flex-col gap-6 w-full md:w-auto">
               {[
-                { title: "GreenNest", desc: "A full-stack application for shopping plants and booking gardening appointments.", link: "https://github.com/Adrich-Fernandes/GreenNest" },
-                { title: "RentEase", desc: "A comprehensive furniture and appliance rental platform with user and admin functionality.", link: "https://github.com/Adrich-Fernandes/RENT_EASY" },
+                { title: "GreenNest", desc: "A 3-tier gardening platform with automated inventory control and service booking engine.", link: "https://github.com/Adrich-Fernandes/GreenNest" },
+                { title: "RentEase", desc: "A MERN-stack rental platform with real-time order tracking and role-based management.", link: "https://github.com/Adrich-Fernandes/RENT_EASY" },
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-2xl flex flex-col justify-between gap-4" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(125,211,252,0.1)" }}>
                   <div>
