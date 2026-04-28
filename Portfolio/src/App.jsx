@@ -191,7 +191,7 @@ export default function GlassArctic() {
             <button onClick={() => handleScroll("contact")} className="px-6 py-3 rounded-xl font-semibold transition duration-300" style={{ border: "1px solid rgba(56,189,248,0.5)", color: "#38bdf8", background: "rgba(56,189,248,0.05)" }} onMouseEnter={e => { e.currentTarget.style.background = "rgba(56,189,248,0.15)"; e.currentTarget.style.boxShadow = "0 0 20px rgba(56,189,248,0.3)"; }} onMouseLeave={e => { e.currentTarget.style.background = "rgba(56,189,248,0.05)"; e.currentTarget.style.boxShadow = "none"; }}>
               Get In Touch
             </button>
-            <a href="/Adrich Fernandes.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-xl font-semibold text-[#0c1a2e] transition duration-300 text-center" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 20px rgba(56,189,248,0.4)" }}>
+            <a href="/Adrich-Fernandes.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-xl font-semibold text-[#0c1a2e] transition duration-300 text-center" style={{ background: "linear-gradient(135deg, #38bdf8, #7dd3fc)", boxShadow: "0 0 20px rgba(56,189,248,0.4)" }}>
               View My Resume
             </a>
           </div>
