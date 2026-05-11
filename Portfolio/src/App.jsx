@@ -6,6 +6,8 @@ import {
   Download, Code2, Zap, Layout, MessageSquare, Send,
   ChevronRight
 } from "lucide-react";
+import unifiedMentorLogo from "./assets/unifiedmentor.png";
+
 
 export default function GlassArctic() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -610,7 +612,7 @@ export default function GlassArctic() {
             <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
               <div className="w-28 h-28 rounded-full overflow-hidden" style={{ border: `2px solid ${themeColors.accent}80`, boxShadow: darkMode ? `0 0 20px ${themeColors.accent}4d` : "none" }}>
                 <img
-                  src="/src/assets/unifiedmentor.png"
+                  src={unifiedMentorLogo}
                   alt="Company Logo"
                   className="w-full h-full object-cover"
                   style={{ filter: darkMode ? "brightness(1.1) contrast(1.1)" : "none" }}
