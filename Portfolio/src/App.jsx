@@ -335,7 +335,7 @@ export default function GlassArctic() {
             <motion.a 
               whileHover={{ scale: 1.05, boxShadow: darkMode ? "0 0 30px rgba(56,189,248,0.6)" : "0 8px 20px rgba(2, 132, 199, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              href="/Adrich-Fernandes.pdf?v=2" 
+              href="/Adrich-Fernandes.pdf?v=3" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-6 py-3 rounded-xl font-semibold transition duration-300 text-center flex items-center gap-2" 
