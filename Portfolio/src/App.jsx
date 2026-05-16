@@ -89,15 +89,41 @@ export default function App() {
 
   // Animation Variants
   const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
+    initial: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
+  };
+
+  const fadeInLeft = {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
+  };
+
+  const fadeInRight = {
+    initial: { opacity: 0, x: 50 },
+    animate: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
+  };
+
+  const scaleIn = {
+    initial: { opacity: 0, scale: 0.85 },
+    animate: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200, damping: 20 } }
   };
 
   const staggerContainer = {
+    initial: {},
     animate: {
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.12,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const staggerFast = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.07,
+        delayChildren: 0.05
       }
     }
   };
@@ -141,7 +167,11 @@ export default function App() {
           glassCard={glassCard}
           glassCardHover={glassCardHover}
           fadeInUp={fadeInUp}
+          fadeInLeft={fadeInLeft}
+          fadeInRight={fadeInRight}
+          scaleIn={scaleIn}
           staggerContainer={staggerContainer}
+          staggerFast={staggerFast}
           skillCategories={skillCategories}
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
