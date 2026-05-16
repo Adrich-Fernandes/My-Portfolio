@@ -1,7 +1,7 @@
-@import "tailwindcss";
-
 /* ── Google Fonts ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
 
 /* ── Scroll bar ── */
 ::-webkit-scrollbar { width: 6px; }
@@ -177,29 +177,7 @@
 }
 .btn-ripple:hover::after { transform: scaleX(1); }
 
-/* Cursor trail */
-.cursor-dot {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background: #7dd3fc;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-  mix-blend-mode: screen;
-}
-.cursor-ring {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(125,211,252,0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.15s ease;
-  mix-blend-mode: screen;
-}
+/* Custom cursor removed — using default browser cursor */
 
 /* Section divider */
 .section-divider {

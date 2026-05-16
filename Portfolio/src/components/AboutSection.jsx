@@ -4,8 +4,8 @@ import { Code2, Zap, Layout } from "lucide-react";
 
 const STATS = [
   { label: "Projects Built", value: "10+" },
-  { label: "Months Experience", value: "6+" },
-  { label: "Technologies", value: "15+" },
+  { label: "Months Internship Experience", value: "3" },
+  { label: "Technologies", value: "10+" },
 ];
 
 export default function AboutSection({ darkMode, themeColors, glassCardHover, fadeInUp, fadeInLeft, fadeInRight, staggerContainer }) {

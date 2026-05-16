@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, X, Github, Linkedin, Mail, Instagram } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Sun, Moon, X } from "lucide-react";
 
-import HeroSection     from "./HeroSection";
-import AboutSection    from "./AboutSection";
-import ProjectsSection from "./ProjectsSection";
-import SkillsSection   from "./SkillsSection";
+import HeroSection      from "./HeroSection";
+import AboutSection     from "./AboutSection";
+import ProjectsSection  from "./ProjectsSection";
+import SkillsSection    from "./SkillsSection";
 import ExperienceSection from "./ExperienceSection";
+import ContactSection   from "./ContactSection";
 
 /* ── Ambient floating particles ── */
 function Particles({ themeColors }) {
@@ -67,25 +67,7 @@ function Particles({ themeColors }) {
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0 opacity-40" />;
 }
 
-/* ── Custom cursor glow ── */
-function CursorGlow() {
-  const dot   = useRef(null);
-  const ring  = useRef(null);
-  useEffect(() => {
-    const move = e => {
-      if (dot.current)  { dot.current.style.left  = e.clientX - 4  + "px"; dot.current.style.top  = e.clientY - 4  + "px"; }
-      if (ring.current) { ring.current.style.left = e.clientX - 18 + "px"; ring.current.style.top = e.clientY - 18 + "px"; }
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-  return (
-    <>
-      <div ref={dot}  className="cursor-dot hidden md:block" />
-      <div ref={ring} className="cursor-ring hidden md:block" />
-    </>
-  );
-}
+/* Custom cursor removed */
 
 /* ── Main component ── */
 const PortfolioHome = ({
@@ -100,9 +82,8 @@ const PortfolioHome = ({
   return (
     <div
       className="min-h-screen transition-colors duration-500 grain-overlay"
-      style={{ background: themeColors.bg, color: themeColors.textPrimary, fontFamily: "'Inter', sans-serif", cursor: "none" }}
+      style={{ background: themeColors.bg, color: themeColors.textPrimary, fontFamily: "'Inter', sans-serif" }}
     >
-      <CursorGlow />
       <Particles themeColors={themeColors} />
 
       {/* Ambient blobs */}
@@ -233,38 +214,18 @@ const PortfolioHome = ({
         staggerContainer={staggerContainer}
       />
 
-      {/* ── FOOTER / CONTACT ── */}
-      <motion.div
-        id="contact"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 text-center py-12 border-t"
-        style={{ borderColor: themeColors.border }}
-      >
-        <motion.p className="text-lg font-semibold mb-6 shimmer-text">Let's Connect</motion.p>
-        <div className="flex gap-4 justify-center mb-6">
-          {[
-            { href:"https://www.instagram.com/adrich__fernandes/?__pwa=1", icon:<Instagram className="w-5 h-5"/> },
-            { href:"https://github.com/Adrich-Fernandes", icon:<Github className="w-5 h-5"/> },
-            { href:"https://www.linkedin.com/in/adrich-fernandes-b14b2034b/", icon:<Linkedin className="w-5 h-5"/> },
-            { href:"mailto:adrichancyfernandes@gmail.com", icon:<Mail className="w-5 h-5"/> },
-          ].map((s, i) => (
-            <motion.a key={i}
-              whileHover={{ scale:1.15, rotate:8, boxShadow:`0 0 20px ${themeColors.accent}60` }}
-              whileTap={{ scale:0.9 }}
-              href={s.href}
-              target={s.href.startsWith("mailto:") ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-              style={{ background: themeColors.cardBg, border:`1px solid ${themeColors.accent}40`, color: themeColors.accent }}>
-              {s.icon}
-            </motion.a>
-          ))}
-        </div>
-        <p style={{ color:"#9ca3af" }} className="text-sm">© Adrich Fernandes</p>
-      </motion.div>
+      <ContactSection
+        darkMode={darkMode} themeColors={themeColors} glassCard={glassCard}
+        fadeInUp={fadeInUp} fadeInLeft={fadeInLeft} fadeInRight={fadeInRight}
+        staggerContainer={staggerContainer}
+        formData={formData} handleChange={handleChange}
+        handleSubmit={handleSubmit} status={status}
+      />
+
+      {/* ── FOOTER ── */}
+      <div className="relative z-10 text-center py-8 border-t" style={{ borderColor: themeColors.border }}>
+        <p style={{ color: "#9ca3af" }} className="text-sm">© Adrich Fernandes</p>
+      </div>
     </div>
   );
 };
