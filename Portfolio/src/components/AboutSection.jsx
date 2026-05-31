@@ -22,7 +22,7 @@ export default function AboutSection({ darkMode, themeColors, glassCardHover, fa
       whileInView="animate"
       viewport={{ once: true, margin: "-100px" }}
       variants={staggerContainer}
-      className="relative z-10 min-h-screen px-6 md:px-16 py-32"
+      className="relative z-10 min-h-screen px-4 sm:px-6 md:px-16 py-20 md:py-32"
     >
       {/* Heading */}
       <motion.div variants={fadeInUp} className="text-center space-y-4 mb-16">
@@ -33,24 +33,24 @@ export default function AboutSection({ darkMode, themeColors, glassCardHover, fa
       {/* Stat counters */}
       <motion.div
         variants={staggerContainer}
-        className="grid grid-cols-3 gap-6 max-w-lg mx-auto mb-20"
+        className="grid grid-cols-3 gap-3 sm:gap-6 max-w-lg mx-auto mb-12 md:mb-20"
       >
         {STATS.map((s, i) => (
           <motion.div
             key={i}
             variants={fadeInUp}
             whileHover={{ scale: 1.08, boxShadow: `0 0 30px ${themeColors.accent}40` }}
-            className="flex flex-col items-center p-4 rounded-2xl"
+            className="flex flex-col items-center p-3 sm:p-4 rounded-2xl"
             style={{ background: themeColors.cardBg, border: `1px solid ${themeColors.accent}30` }}
           >
-            <span className="text-3xl font-black shimmer-text">{s.value}</span>
+            <span className="text-2xl sm:text-3xl font-black shimmer-text">{s.value}</span>
             <span className="text-xs mt-1 text-center" style={{ color: themeColors.textSecondary }}>{s.label}</span>
           </motion.div>
         ))}
       </motion.div>
 
       {/* Cards */}
-      <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
         {cards.map((card, i) => (
           <motion.div
             key={i}

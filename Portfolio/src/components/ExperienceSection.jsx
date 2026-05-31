@@ -16,7 +16,7 @@ export default function ExperienceSection({ darkMode, themeColors, fadeInUp, fad
       whileInView="animate"
       viewport={{ once: true, margin: "-100px" }}
       variants={staggerContainer}
-      className="relative z-10 w-full py-28 px-6 md:px-16"
+      className="relative z-10 w-full py-20 md:py-28 px-4 sm:px-6 md:px-16"
     >
       <motion.div variants={fadeInUp} className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-extrabold shimmer-text">Experience</h2>
@@ -26,10 +26,10 @@ export default function ExperienceSection({ darkMode, themeColors, fadeInUp, fad
       <motion.div
         variants={fadeInUp}
         whileHover={{ boxShadow: "0 0 60px rgba(125,211,252,0.15)" }}
-        className="max-w-6xl mx-auto rounded-3xl p-10"
+        className="max-w-6xl mx-auto rounded-3xl p-5 sm:p-8 md:p-10"
         style={{ background: darkMode ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)", backdropFilter: "blur(16px)", border: `1px solid ${themeColors.border}`, transition: "box-shadow 0.5s ease" }}
       >
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
 
           {/* Company info */}
           <motion.div variants={fadeInLeft} className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">

@@ -10,7 +10,7 @@ export default function ProjectsSection({ darkMode, themeColors, glassCard, fade
       whileInView="animate"
       viewport={{ once: true, margin: "-100px" }}
       variants={staggerContainer}
-      className="relative z-10 min-h-screen px-6 md:px-16 py-24"
+      className="relative z-10 min-h-screen px-4 sm:px-6 md:px-16 py-20 md:py-24"
     >
       <motion.div variants={fadeInUp} className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-extrabold shimmer-text">Projects</h2>
@@ -23,8 +23,9 @@ export default function ProjectsSection({ darkMode, themeColors, glassCard, fade
             key={i}
             variants={fadeInUp}
             whileHover={{ y: -10 }}
-            className={`${glassCard} overflow-hidden flex flex-col group`}
-            style={{ transition: "box-shadow 0.4s ease" }}
+            className={`${glassCard} overflow-hidden flex flex-col group rounded-2xl`}
+            style={{ transition: "box-shadow 0.4s ease", isolation: "isolate" }}
+
             onMouseEnter={e => e.currentTarget.style.boxShadow = `0 20px 50px ${themeColors.accent}33`}
             onMouseLeave={e => e.currentTarget.style.boxShadow = ""}
           >

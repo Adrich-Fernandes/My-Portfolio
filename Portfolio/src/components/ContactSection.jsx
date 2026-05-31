@@ -14,7 +14,7 @@ export default function ContactSection({
       whileInView="animate"
       viewport={{ once: true, margin: "-100px" }}
       variants={staggerContainer}
-      className="relative z-10 w-full py-28 px-6 md:px-16"
+      className="relative z-10 w-full py-20 md:py-28 px-4 sm:px-6 md:px-16"
     >
       {/* Heading */}
       <motion.div variants={fadeInUp} className="text-center mb-16 space-y-3">
@@ -58,7 +58,7 @@ export default function ContactSection({
               </div>
               <div>
                 <p className="text-xs font-semibold mb-0.5" style={{ color: themeColors.textSecondary }}>{item.label}</p>
-                <p className="font-medium" style={{ color: themeColors.textPrimary }}>{item.value}</p>
+                <p className="font-medium text-sm sm:text-base break-all sm:break-normal" style={{ color: themeColors.textPrimary }}>{item.value}</p>
               </div>
             </motion.div>
           ))}
@@ -91,7 +91,7 @@ export default function ContactSection({
         <motion.form
           variants={fadeInRight}
           onSubmit={handleSubmit}
-          className="space-y-5 p-8 rounded-2xl"
+          className="space-y-5 p-5 sm:p-8 rounded-2xl"
           style={{
             background: darkMode ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.03)",
             border: `1px solid ${themeColors.accent}25`,

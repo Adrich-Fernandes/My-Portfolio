@@ -37,7 +37,7 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
       initial="initial"
       animate="animate"
       variants={staggerContainer}
-      className="relative z-10 min-h-screen flex flex-col md:flex-row items-center px-6 md:px-16 pt-28 gap-10"
+      className="relative z-10 min-h-screen flex flex-col md:flex-row items-center px-4 sm:px-6 md:px-16 pt-24 md:pt-28 gap-8 md:gap-10 overflow-hidden"
     >
       {/* Text side */}
       <motion.div variants={fadeInUp} className="w-full md:w-1/2 space-y-6 text-center md:text-left order-2 md:order-1">
@@ -49,14 +49,13 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
           <Zap className="w-4 h-4" /> Open to opportunities
         </motion.span>
 
-        <motion.div variants={fadeInUp} className="text-4xl md:text-5xl font-extrabold leading-tight">
+        <motion.div variants={fadeInUp} className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
           <span>Hi, I'm </span>
           <span className="shimmer-text">Adrich Fernandes</span>
         </motion.div>
 
         <motion.div variants={fadeInUp} className="text-xl md:text-2xl font-bold h-8" style={{ color: themeColors.textSecondary }}>
           <span>{displayed}</span>
-          <span className="blink-cursor" />
         </motion.div>
 
         <motion.p variants={fadeInUp} className="text-base max-w-xl mx-auto md:mx-0 leading-relaxed" style={{ color: themeColors.textSecondary }}>
@@ -80,14 +79,14 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
           ))}
         </motion.div>
 
-        <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
           <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleScroll("projects")}
-            className="btn-ripple px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
+            className="btn-ripple px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base"
             style={{ border: `1px solid ${themeColors.accent}80`, color: themeColors.accent, background: `${themeColors.accent}10` }}>
             View My Work <Layout className="w-4 h-4" />
           </motion.button>
           <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleScroll("contact")}
-            className="btn-ripple px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
+            className="btn-ripple px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base"
             style={{ border: `1px solid ${themeColors.accent}80`, color: themeColors.accent, background: `${themeColors.accent}10` }}>
             Get In Touch <MessageSquare className="w-4 h-4" />
           </motion.button>
@@ -95,7 +94,7 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(56,189,248,0.6)" }}
             whileTap={{ scale: 0.95 }}
             href="/Adrich-Fernandes.pdf?v=3" target="_blank" rel="noopener noreferrer"
-            className="btn-ripple px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
+            className="btn-ripple px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base"
             style={{ color: darkMode ? "#0c1a2e" : "#fff", background: `linear-gradient(135deg, ${themeColors.accentHover}, ${themeColors.accent})`, boxShadow: "0 0 20px rgba(56,189,248,0.4)" }}>
             View Resume <Download className="w-4 h-4" />
           </motion.a>
@@ -131,13 +130,13 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="relative p-1 rounded-full group"
+            className="relative p-1 rounded-full group overflow-hidden"
             style={{ background: `linear-gradient(135deg, ${themeColors.accentHover}, ${themeColors.accent}, #bae6fd)`, boxShadow: "0 0 60px rgba(56,189,248,0.4)" }}
           >
             <img
               src="https://w0.peakpx.com/wallpaper/631/529/HD-wallpaper-vagabond-art-manga-slam-dunk-takehiko-inoue-vagabond.jpg"
               alt="Profile"
-              className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover transition duration-700 group-hover:scale-105"
+              className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full object-cover transition duration-700 group-hover:scale-105"
               style={{ filter: darkMode ? "brightness(1.1) contrast(1.05) saturate(0.9) hue-rotate(10deg)" : "none" }}
             />
             <div className="absolute inset-0 rounded-full pointer-events-none shimmer-border"
@@ -146,20 +145,6 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
-        onClick={() => handleScroll("about")}
-      >
-        <span className="text-xs" style={{ color: themeColors.textSecondary }}>scroll down</span>
-        <div className="scroll-bounce w-5 h-8 rounded-full border-2 flex items-start justify-center pt-1.5"
-          style={{ borderColor: `${themeColors.accent}60` }}>
-          <div className="w-1 h-2 rounded-full" style={{ background: themeColors.accent }} />
-        </div>
-      </motion.div>
     </motion.div>
   );
 }

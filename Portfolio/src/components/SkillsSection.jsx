@@ -12,7 +12,7 @@ export default function SkillsSection({ darkMode, themeColors, fadeInUp, stagger
       whileInView="animate"
       viewport={{ once: true, margin: "-100px" }}
       variants={staggerContainer}
-      className="relative z-10 w-full py-28 px-6 md:px-16"
+      className="relative z-10 w-full py-20 md:py-28 px-4 sm:px-6 md:px-16"
     >
       <motion.div variants={fadeInUp} className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-extrabold shimmer-text">Technical Skills</h2>
@@ -27,7 +27,7 @@ export default function SkillsSection({ darkMode, themeColors, fadeInUp, stagger
               key={idx}
               variants={fadeInUp}
               whileHover={{ boxShadow: `0 0 40px ${themeColors.accent}20` }}
-              className="p-8 rounded-2xl"
+              className="p-5 sm:p-8 rounded-2xl"
               style={{
                 background: darkMode ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.02)",
                 border: `1px solid ${themeColors.accent}${darkMode ? "33" : "4d"}`,
