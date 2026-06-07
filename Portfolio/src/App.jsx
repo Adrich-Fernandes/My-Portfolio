@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import ProjectAdmin from "./components/Admin";
+import AdminGuard from "./components/AdminGuard";
 import PortfolioHome from "./components/PortfolioHome";
 import { initialProjects } from "./data/projects";
 
@@ -186,7 +187,11 @@ export default function App() {
           projects={projects}
         />
       } />
-      <Route path="/admin" element={<ProjectAdmin darkMode={darkMode} themeColors={themeColors} glassCard={glassCard} />} />
+      <Route path="/admin" element={
+        <AdminGuard darkMode={darkMode} themeColors={themeColors}>
+          <ProjectAdmin darkMode={darkMode} themeColors={themeColors} glassCard={glassCard} />
+        </AdminGuard>
+      } />
     </Routes>
   );
 }
