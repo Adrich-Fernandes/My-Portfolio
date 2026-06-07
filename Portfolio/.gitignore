@@ -22,7 +22,3 @@ node_modules
 *.sw?
 dist/
 
-# Env files
-.env
-.env.*
-!.env.example

@@ -8,13 +8,6 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
   const [wordIndex, setWordIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [deleting, setDeleting] = useState(false);
-  const [resumeUrl, setResumeUrl] = useState("/Adrich-Fernandes.pdf?v=3");
-
-  useEffect(() => {
-    const savedResume = localStorage.getItem("portfolio_resume_url");
-    if (savedResume) setResumeUrl(savedResume);
-  }, []);
-
   useEffect(() => {
     const word = TYPING_WORDS[wordIndex];
     let timeout;
@@ -99,7 +92,7 @@ export default function HeroSection({ darkMode, themeColors, fadeInUp, fadeInRig
           <motion.a
             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(56,189,248,0.6)" }}
             whileTap={{ scale: 0.95 }}
-            href={resumeUrl} target="_blank" rel="noopener noreferrer"
+            href="/Adrich-Fernandes.pdf?v=3" target="_blank" rel="noopener noreferrer"
             className="btn-ripple px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base"
             style={{ color: darkMode ? "#0c1a2e" : "#fff", background: `linear-gradient(135deg, ${themeColors.accentHover}, ${themeColors.accent})`, boxShadow: "0 0 20px rgba(56,189,248,0.4)" }}>
             View Resume <Download className="w-4 h-4" />

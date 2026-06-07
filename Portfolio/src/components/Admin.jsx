@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { 
-  ArrowLeft, Plus, Trash2, ExternalLink, Image as ImageIcon, 
-  Save, Download, CheckCircle2, FileText, Link2, Upload, Eye, X 
+  ArrowLeft, Plus, Trash2, ExternalLink,
+  Save, Download, CheckCircle2, FileText, Upload, Eye, X, RefreshCw
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { initialProjects } from "../data/projects";
@@ -17,19 +17,11 @@ function ProjectAdmin({ darkMode, themeColors, glassCard }) {
   });
   const [status, setStatus] = useState("idle");
 
-  // Resume Manager State
-  const [resumeUrl, setResumeUrl] = useState("");
-  const [resumeInput, setResumeInput] = useState("");
-  const [resumeStatus, setResumeStatus] = useState("idle");
-
   useEffect(() => {
     const savedProjects = localStorage.getItem("portfolio_projects");
     if (savedProjects) {
       const parsed = JSON.parse(savedProjects);
-      // Filter out stale entry
       const filtered = parsed.filter(p => p.title !== "Product List");
-      
-      // Merge unique ones
       const merged = [...initialProjects];
       filtered.forEach(p => {
         if (!merged.find(ip => ip.title === p.title)) {
@@ -39,13 +31,6 @@ function ProjectAdmin({ darkMode, themeColors, glassCard }) {
       setProjects(merged);
     } else {
       setProjects(initialProjects);
-    }
-
-    // Load saved resume URL
-    const savedResume = localStorage.getItem("portfolio_resume_url");
-    if (savedResume) {
-      setResumeUrl(savedResume);
-      setResumeInput(savedResume);
     }
   }, []);
 
@@ -74,22 +59,6 @@ function ProjectAdmin({ darkMode, themeColors, glassCard }) {
     alert("Project data code copied to clipboard! You can paste this into src/data/projects.js for permanent update.");
   };
 
-  // Resume handlers
-  const handleSaveResume = (e) => {
-    e.preventDefault();
-    if (!resumeInput.trim()) return;
-    localStorage.setItem("portfolio_resume_url", resumeInput.trim());
-    setResumeUrl(resumeInput.trim());
-    setResumeStatus("success");
-    setTimeout(() => setResumeStatus("idle"), 3000);
-  };
-
-  const handleClearResume = () => {
-    localStorage.removeItem("portfolio_resume_url");
-    setResumeUrl("");
-    setResumeInput("");
-  };
-
   return (
     <div className="min-h-screen p-6 md:p-12" style={{ background: themeColors.bg, color: themeColors.textPrimary }}>
       <div className="max-w-5xl mx-auto">
@@ -103,71 +72,6 @@ function ProjectAdmin({ darkMode, themeColors, glassCard }) {
           </Link>
           <h1 className="text-3xl font-bold" style={{ color: themeColors.accent }}>Admin Panel</h1>
         </div>
-
-        {/* ─── Resume Manager ─── */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className={`${glassCard} p-8 mb-12`}
-        >
-          <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-            <FileText className="w-6 h-6" style={{ color: themeColors.accent }} /> Resume Manager
-          </h2>
-
-          {resumeUrl && (
-            <div className="mb-6 p-4 rounded-xl flex items-center justify-between gap-4"
-              style={{ background: `${themeColors.accent}10`, border: `1px solid ${themeColors.accent}30` }}>
-              <div className="flex items-center gap-3 min-w-0">
-                <FileText className="w-5 h-5 shrink-0" style={{ color: themeColors.accent }} />
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold" style={{ color: themeColors.accent }}>Current Resume</p>
-                  <p className="text-xs opacity-60 truncate">{resumeUrl}</p>
-                </div>
-              </div>
-              <div className="flex gap-2 shrink-0">
-                <a href={resumeUrl} target="_blank" rel="noopener noreferrer"
-                  className="p-2 rounded-lg transition hover:scale-110"
-                  style={{ background: `${themeColors.accent}20`, color: themeColors.accent }}>
-                  <Eye className="w-4 h-4" />
-                </a>
-                <button onClick={handleClearResume}
-                  className="p-2 rounded-lg transition hover:scale-110 hover:bg-red-500/20 text-red-400">
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          )}
-
-          <form onSubmit={handleSaveResume} className="flex gap-3">
-            <div className="relative flex-1">
-              <Link2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 opacity-40" />
-              <input
-                required
-                type="url"
-                value={resumeInput}
-                onChange={(e) => setResumeInput(e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-2.5 outline-none focus:border-blue-400 text-sm"
-                placeholder="Paste your resume PDF link (Google Drive, Cloudinary, etc.)"
-              />
-            </div>
-            <button
-              type="submit"
-              className="px-5 py-2.5 rounded-xl font-bold transition duration-300 flex items-center gap-2 shrink-0 text-sm"
-              style={{
-                background: resumeStatus === "success"
-                  ? "linear-gradient(135deg, #22c55e, #4ade80)"
-                  : `linear-gradient(135deg, ${themeColors.accentHover}, ${themeColors.accent})`,
-                color: darkMode ? "#0c1a2e" : "#ffffff"
-              }}
-            >
-              {resumeStatus === "success" ? <><CheckCircle2 className="w-4 h-4" /> Saved!</> : <><Upload className="w-4 h-4" /> Update</>}
-            </button>
-          </form>
-
-          <p className="text-xs opacity-40 mt-3">
-            💡 Tip: Upload your resume to Google Drive → Share → "Anyone with the link" → Copy link. When you update the file on Drive, the link stays the same!
-          </p>
-        </motion.div>
 
         {/* ─── Project Manager ─── */}
         <h2 className="text-2xl font-bold mb-8" style={{ color: themeColors.accent }}>Project Manager</h2>
